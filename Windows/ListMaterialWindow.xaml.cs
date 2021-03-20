@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static wsrtest.EF.AppData;
 
 namespace wsrtest.Windows
 {
@@ -22,11 +23,12 @@ namespace wsrtest.Windows
         public ListMaterialWindow()
         {
             InitializeComponent();
+            LVMaterial.ItemsSource = Context.Material.ToList();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
