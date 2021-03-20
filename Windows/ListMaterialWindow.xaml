@@ -9,6 +9,63 @@
         Height="600" Width="800" WindowStartupLocation="CenterScreen"
         MinHeight="600" MinWidth="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10,5">
+                <Image Source="/Resources/Image.png"/>
+                <TextBlock Text="Одежда для ручек" VerticalAlignment="Center"
+                           TextAlignment="Center" TextWrapping="Wrap" Width="75"
+                           FontFamily="Candara" FontSize="15" Margin="5"/>
+            </StackPanel>
+
+            <Button  Grid.Column="3" Content="Выход" HorizontalAlignment="Right"
+                     Width="100" FontFamily="Candara" FontSize="15" Margin="30,20"
+                     Background="#A5E887" Click="Exit_Click"/>
+        </Grid>
+
+        <TextBlock Grid.Row="1" Text="Список материалов" VerticalAlignment="Center"
+                           TextAlignment="Center" HorizontalAlignment="Left"
+                           FontFamily="Candara" FontSize="20" Margin="20,10"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBox Grid.Column="0" Name="TBFilter"
+                     VerticalAlignment="Center"
+                     TextAlignment="Center"
+                     FontFamily="Candara" FontSize="16" Margin="10,5"/>
+            
+            <ComboBox Grid.Column="1" Name="CBSort"
+                     VerticalAlignment="Center"
+                      FontFamily="Candara" FontSize="16" Margin="10,5"/>
+
+            <ComboBox Grid.Column="2" Name="CBFilter"
+                     VerticalAlignment="Center"
+                      FontFamily="Candara" FontSize="16" Margin="10,5"/>
+        </Grid>
+
+        <ListView Name="LVMaterial" Grid.Row="3">
+            
+        </ListView>
     </Grid>
 </Window>
